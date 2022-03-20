@@ -1,0 +1,41 @@
+.container {
+  .row {
+    background-color: $color-text;
+    border-radius: 10px;
+    h1 {
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 45px;
+      text-align: center;
+    }
+    .card {
+      width: 100%;
+      border-bottom: 1px solid $color-secondary;
+      align-content: center;
+      img {
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+      }
+      h3 {
+        color: #fff;
+        margin-bottom: 0.4rem;
+      }
+      a {
+        font-size: 1.1rem;
+        padding: 0.35rem;
+        border: 1px solid #f7a905;
+        background-color: #ffe2c9;
+        color: #564741;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: #f7a905;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.page-banner {
+  position: relative;
+  padding: 4.5rem 0 2.5rem 0;
+  &__bg-image {
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $z-background;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &--images {
+      position: relative;
+
+      .bg-image {
+        padding: 1rem 2rem;
+      }
+      .img1 {
+        width: 3.2rem;
+        height: 3.2rem;
+        border: 5px solid $color-secondary;
+        border-radius: 50%;
+        position: absolute;
+        left: 15%;
+        top: 28%;
+        img {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .img2 {
+        @extend .img1;
+        left: 40%;
+        top: 10%;
+      }
+      .img3 {
+        @extend .img1;
+        left: 65%;
+        top: 20%;
+      }
+      .img4 {
+        @extend .img1;
+        left: 75%;
+        top: 50%;
+      }
+      .img5 {
+        @extend .img1;
+        left: 35%;
+        top: 50%;
+        width: 6rem;
+        height: 6rem;
+      }
+    }
+    &--info {
+      padding: 2rem 1rem;
+      text-align: center;
+      .headline {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 45px;
+      }
+      .pb-text {
+        padding-bottom: 1rem;
+      }
+      .btn {
+        padding: 1rem;
+        border: 1px solid $color-primary;
+        background-color: $color-secondary;
+        color: $color-text;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background-color: $color-primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

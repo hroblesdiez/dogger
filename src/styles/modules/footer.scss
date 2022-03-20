@@ -1,0 +1,91 @@
+.footer-top {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 100vw;
+  position: relative;
+  background-color: $color-secondary;
+
+  @include atSmallMedium {
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+  div {
+    text-align: center;
+    .logo {
+      margin-bottom: 0.75rem;
+      .logo-img {
+        display: flex;
+        align-items: center;
+        padding-right: 1rem;
+        width: 100%;
+        span {
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+      }
+    }
+    .social {
+      margin-bottom: 2rem;
+      a {
+        font-size: 1.25rem;
+        padding-right: 0.5rem;
+      }
+    }
+  }
+  .phone,
+  .address,
+  .timetable {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    div {
+      i {
+        font-size: 1.75rem;
+        margin-bottom: 0.25rem;
+      }
+      h3 {
+        line-height: 1.5;
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+      }
+    }
+    p {
+      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+    }
+  }
+
+  .footer-nav1,
+  .footer-nav2 {
+    h3 {
+      line-height: 1.5;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .footer-navigation {
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.75rem;
+      ul {
+        li {
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+  }
+}
+.footer-low {
+  background-color: $color-text;
+  padding: 0.55rem;
+  text-align: center;
+  p {
+    font-size: 0.7rem;
+    margin: 0;
+    color: #fff;
+    .fa-heart {
+      color: rgb(207, 15, 15);
+    }
+  }
+}

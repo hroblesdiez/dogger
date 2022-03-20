@@ -1,0 +1,74 @@
+@import "variables";
+
+@mixin atSmall {
+  @media (min-width: 530px) {
+    @content;
+  }
+}
+
+@mixin atSmallMedium {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin atMedium {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@mixin heading($fsize: 60px) {
+  margin: 0 0 1.2rem 0;
+  font-family: $font-family-heading;
+  font-size: $fsize;
+  font-weight: 400;
+  color: $color-text;
+  line-height: 1.75;
+}
+h1 {
+  @include heading;
+}
+h2 {
+  @include heading($fsize: 40px);
+}
+h3 {
+  @include heading($fsize: 25px);
+}
+
+p {
+  margin: 0 0 0.9rem 0;
+  font-family: $font-family-para;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $color-text;
+  line-height: 1.5;
+}
+li {
+  list-style-type: none;
+  line-height: 0.9;
+}
+a {
+  color: $color-text;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-primary;
+}
