@@ -1,52 +1,53 @@
-const path = require ( 'path' );
-const MiniCssExtractPlugin = require ( 'mini-css-extract-plugin' );
-const { CleanWebpackPlugin } = require ( 'clean-webpack-plugin' );
 
-const JS_DIR = path.resolve ( __dirname, 'src');
-const BUILD_DIR = path.resolve ( __dirname, 'build');
-
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const isProduction = process.env.NODE_ENV === 'production';
+const CopyPlugin = require("copy-webpack-plugin");
+const stylesHandler = MiniCssExtractPlugin.loader;
+const DIST = path.resolve( __dirname, 'dist' );
 const entry = {
-    main: JS_DIR + '/main.js',
+  index: './src/index.js',
+  editor: './src/editor.js',
 };
-const output = {
-    path: BUILD_DIR,
+
+const config  = {
+  entry: entry,
+  output: {
+    path: DIST,
     filename: '[name].js',
+    clean: true,
+  },
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/library", to: DIST },
+      ],
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/i,
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.(scss|css)$/i,
+        use: [stylesHandler, 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        type: 'asset',
+      },
+    ],
+  },
 };
 
-const rules = [
-    {
-        test: /\.js$/,
-        include: [JS_DIR],
-        exclude: /node_modules/,
-        use: 'babel-loader',
-    },
-
-    {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-    },
-
-    {
-
-    }
-];
-
-const plugins =  [
-    new CleanWebpackPlugin (),
-    new MiniCssExtractPlugin ({
-        filename: '[name].css',
-    }),
-];
-
-module.exports = ( env, argv ) => ({
-
-    entry: entry,
-    output: output,
-    devtool: 'source-map',
-    module: {
-        rules: rules,
-    },
-    plugins: plugins,
-
-});
+module.exports = () => {
+  if (isProduction) {
+    config.mode = 'production';
+  } else {
+    config.mode = 'development';
+  }
+  return config;
+};

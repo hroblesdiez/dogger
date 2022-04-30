@@ -1,9 +1,9 @@
 <footer>
-    <div class="footer-top">
-        <div>
-            <div class="logo">
+    <div class="flex flex-col lg:flex lg:flex-row lg:items-start lg:justify-center lg:space-x-20 lg:pt-5 bg-text text-white text-center">
+        <div class="flex flex-col items-center pb-6 lg:relative lg:top-[-15px]">
+            <div class="">
                 <a href="/">
-                    <div class="logo-img">
+                    <div class="flex flex-row items-center m-auto">
                         <svg width="60" height="60" version="1.1" viewBox="0 0 15.875 15.875" xmlns="http://www.w3.org/2000/svg">
                             <g transform="translate(-62.484 -104.82)">
                                 <g stroke="#000">
@@ -50,64 +50,65 @@
                                 </g>
                             </g>
                         </svg>
-                        <span class="">Dogger</span>
+                        <span class="font-paytone text-white text-xl uppercase pl-2 font-bold hover:text-primary ">Dogger</span>
                     </div>
                 </a>
             </div>
-            <div class="social">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <div class="">
+                <a class="pr-2 text-xl hover:text-primary" href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a class="pr-2 text-xl hover:text-primary" href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a class="pr-2 text-xl hover:text-primary" href="#"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </div>
-        <div class="phone">
-            <div>
-                <i class="fas fa-phone-alt"></i>
-                <h3>Call Us:</h3>
+        <div class="lg:flex lg:flex-row lg:content-center lg:justify-center lg:space-x-10">
+            <div class="md:flex md:justify-center md:content-start md:space-x-10">
+                <div class="font-poppins pb-6">
+                    <div class="pb-3 lg:flex lg:items-center lg:space-x-3">
+                        <i class="text-xl hover:text-primary fas fa-phone-alt"></i>
+                        <h3>Call Us:</h3>
+                    </div>
+                    <p class="text-sm pb-2">+34 666 777 888</p>
+                </div>
+                <div class="font-poppins pb-6">
+                    <div class="pb-3 lg:flex lg:items-center lg:space-x-3">
+                        <i class="fas fa-map-marker-alt hover:text-primary"></i>
+                        <h3>Address:</h3>
+                    </div>
+                    <p class="text-sm pb-2">Szczygla Street, 2</p>
+                    <p class="text-sm pb-2">Maryland, 05-270</p>
+                </div>
+                <div class="font-poppins pb-6">
+                    <div class="pb-3 lg:flex lg:items-center lg:space-x-3">
+                        <i class="far fa-clock hover:text-primary"></i>
+                        <h3>Working Hours:</h3>
+                    </div>
+                    <p class="text-sm pb-2">Mon - Fri : 8am - 6pm</p>
+                    <p class="text-sm pb-2">Saturday : 9am - 4pm</p>
+                    <p class="text-sm pb-2">Sunday : Closed</p>
+                </div>
             </div>
-            <p>+34 666 777 888</p>
-        </div>
-        <div class="address">
-            <div>
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Address:</h3>
+            <div class="flex justify-center content-start space-x-10">
+                <div class="font-poppins pb-6">
+                    <h3 class="pb-3">Services:</h3>
+                    <ul>
+                        <li class="text-sm pb-2"><a class="hover:text-primary" href="<?php echo esc_url(site_url('about')); ?>">About</a></li>
+                        <li class="text-sm pb-2"><a class="hover:text-primary" href="<?php echo esc_url(site_url('services')); ?>">Services</a></li>
+                        <li class="text-sm pb-2"><a class="hover:text-primary" href="<?php echo esc_url(site_url('blog')); ?>">Blog</a></li>
+                        <li class="text-sm pb-2"><a class="hover:text-primary" href="<?php echo esc_url(site_url('contact')); ?>">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="font-poppins pb-6">
+                    <h3 class="pb-3">Legal:</h3>
+                    <ul>
+                        <li class="text-sm pb-2"><a class="hover:text-primary" href="<?php echo esc_url(site_url('privacy')); ?>">Privacy</a></li>
+                        <li class="text-sm pb-2"><a class="hover:text-primary" href="<?php echo esc_url(site_url('legal')); ?>">Legal</a></li>
+                    </ul>
+                </div>
             </div>
-            <p>Szczygla Street, 2</p>
-            <p>Maryland, 05-270</p>
         </div>
-        <div class="timetable">
-            <div>
-                <i class="far fa-clock"></i>
-                <h3>Working Hours:</h3>
-            </div>
-            <p>Mon - Fri : 8am - 6pm</p>
-            <p>Saturday : 9am - 4pm</p>
-            <p>Sunday : Closed</p>
-        </div>
-        <div class="footer-nav1">
-            <h3>Services:</h3>
-            <?php wp_nav_menu(array(
-                'menu_location'     => 'footerMenu1',
-                'container'         => 'nav',
-                'container_class'   => 'footer-navigation',
-                'fallback_cb'       => 'false',
-                'depth'             => 2
-            )); ?>
-        </div>
-        <div class="footer-nav2">
-            <h3>Legal:</h3>
-            <?php wp_nav_menu(array(
-                'menu_location'     => 'footerMenu2',
-                'container'         => 'nav',
-                'container_class'   => 'footer-navigation',
-
-                'depth'             => 2
-            )); ?>
-        </div>
-
     </div>
-    <div class="footer-low">
-        <p>&copy; <?php echo get_the_date('Y'); ?>&nbsp; Developed with <i class="fa-solid fa-heart"></i> by Humberto</p>
+    <div class="bg-text">
+        <p class="font-poppins text-sm text-white text-center pb-2">&copy; <?php echo get_the_date('Y'); ?>&nbsp; Developed with <span class="text-red"><i class="fa-solid fa-heart"></i></span> by Humberto</p>
     </div>
 </footer>
 
